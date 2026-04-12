@@ -66,16 +66,11 @@ Install nginx
     sudo apt-get install --yes --no-install-recommends nginx
 
 
-OPTIONAL: Setup a basic "pre-screening" to not make the site too obvious
+Setup a basic "protection" used to not make the site less obvious
 
-    sudo apt-get install --yes --no-install-recommends apache2-utils
-
-    # -c to create (only for first) not for later ones (would overwrite)
-    htpasswd -c /etc/nginx/chatgpt-proxy.htpasswd your.name
-    htpasswd    /etc/nginx/chatgpt-proxy.htpasswd your.friend   
-    htpasswd    /etc/nginx/chatgpt-proxy.htpasswd your.other.friend
-
-    # Search and uncomment the "OPTIONAL" part in `chatgpt-proxy.conf`
+- See comments at `chatgpt_proxy_ok` in `chatgpt-proxy.conf`
+- Change the values if you want, following the instructions
+- Put `chatgpt-proxy-blocked.html` in `/var/www/html`
 
 Place `chatgpt-proxy.conf` it in `/etc/nginx/sites-available/`
 
